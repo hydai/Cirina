@@ -32,9 +32,11 @@ jobs:
 
       - name: List files
         run: |
+          ls out
           ls out/make
           ls out/make/zip
           ls out/make/zip/win32
+          ls out/make/zip/win32/x64
 
   linux:
     name: Linux
@@ -62,6 +64,8 @@ jobs:
           ls -alh out/make
           ls -alh out/make/zip
           ls -alh out/make/zip/linux
+          ls -alh out/make/zip/linux/x64
+          ls -alh out/cirina-linux-x64
 
   darwin:
     name: macOS
