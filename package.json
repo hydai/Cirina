@@ -26,6 +26,7 @@
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
     "css-loader": "^6.11.0",
     "electron": "34.0.2",
+    "electron-builder": "^25.1.8",
     "node-loader": "^2.1.0",
     "style-loader": "^3.3.4"
   },
@@ -34,7 +35,7 @@
     "name": "hydai",
     "email": "z54981220@gmail.com"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
   }
