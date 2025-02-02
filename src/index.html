@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Cirina - FF14 Translation Tool</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .path-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .path-input label {
+            width: 80px;
+        }
+        .path-input input {
+            flex: 1;
+            padding: 5px;
+            margin-right: 5px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px;
+            margin-right: 10px;
+        }
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cirina - FF14 Translation Tool</h1>
+    <div class="path-input">
+        <label for="installPath">安裝路徑:</label>
+        <input type="text" id="installPath" readonly>
+        <button id="selectInstall">選擇</button>
+    </div>
+    <div class="path-input">
+        <label for="backupPath">備份路徑:</label>
+        <input type="text" id="backupPath" readonly>
+        <button id="selectBackup">選擇</button>
+    </div>
+    <div class="path-input">
+        <label for="dataPath">資料路徑:</label>
+        <input type="text" id="dataPath" readonly>
+        <button id="selectData">選擇</button>
+    </div>
+    <div class="button-group">
+        <button id="backupBtn">備份</button>
+        <button id="installBtn">安裝</button>
+        <button id="restoreBtn">還原</button>
+    </div>
+    <div class="message" id="message"></div>
+    <script src="renderer.js"></script>
+</body>
+</html>
+
