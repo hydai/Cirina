@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  windows:
+    name: Windows
+    runs-on: windows-2022
+    timeout-minutes: 60
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: Install deps
+        env:
+          npm_config_foreground_scripts: "true"
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+          ELECTRON_SKIP_BINARY_DOWNLOAD: 1
+        run: npm install
+
+      - name: Make
+        run: npm run make
+
+      - name: List files
+        run: |
+          ls -alh out/make/*
+          ls -alh out/make/**/*.zip
+
+  linux:
+    name: Linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: Install deps
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+          ELECTRON_SKIP_BINARY_DOWNLOAD: 1
+        run: npm install
+
+      - name: Make
+        run: npm run make
+
+      - name: List files
+        run: |
+          ls -alh out/make/*
+          ls -alh out/make/**/*.zip
+
+  darwin:
+    name: macOS
+    runs-on: macos-latest
+    timeout-minutes: 40
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: Install deps
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+          ELECTRON_SKIP_BINARY_DOWNLOAD: 1
+        run: npm install
+
+      - name: Make
+        run: npm run make
+
+      - name: List files
+        run: |
+          ls -alh out/make/*
+          ls -alh out/make/**/*.zip
