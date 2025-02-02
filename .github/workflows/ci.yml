@@ -33,7 +33,7 @@ jobs:
       - name: List files
         run: |
           ls -alh out/make/*
-          ls -alh out/make/**/*.zip
+          ls -alh out/make/win32/*
 
   linux:
     name: Linux
@@ -58,7 +58,7 @@ jobs:
       - name: List files
         run: |
           ls -alh out/make/*
-          ls -alh out/make/**/*.zip
+          ls -alh out/make/linux/*
 
   darwin:
     name: macOS
@@ -83,4 +83,3 @@ jobs:
       - name: List files
         run: |
           ls -alh out/make/*
-          ls -alh out/make/**/*.zip
