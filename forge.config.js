@@ -27,7 +27,7 @@ module.exports = {
           mimeType: ['video/h264']
         }
       }
-    }
+    },
     {
       name: '@electron-forge/maker-deb',
       config: {},
