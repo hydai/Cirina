@@ -37,6 +37,11 @@ jobs:
           ls out/make/zip
           ls out/make/zip/win32
           ls out/make/zip/win32/x64
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: out/make/zip/win32/x64/cirina-win32-x64-*.zip
 
   linux:
     name: Linux
@@ -66,6 +71,11 @@ jobs:
           ls -alh out/make/zip/linux
           ls -alh out/make/zip/linux/x64
           ls -alh out/cirina-linux-x64
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux
+          path: out/make/zip/linux/x64/cirina-linux-x64-*.zip
 
   darwin:
     name: macOS
@@ -90,3 +100,8 @@ jobs:
       - name: List files
         run: |
           ls -alh out/make/*
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: darwin
+          path: out/make/cirina-*-arm64.dmg
